@@ -1,0 +1,152 @@
+﻿<html lang="pt-br"><head>
+    <meta charset="utf-8">
+    <title>Zaap 1.00.200930.01</title>
+    <link href="/Zaap/Zaap_SITE/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <meta name="viewport" content="width=device-width">
+    <link href="/Zaap/Zaap_SITE/bundles/css?v=iFns1OjOlDlSSSm6pctle-3Vzj9J2BGhcMMMFfEjLMc1" rel="stylesheet">
+
+    <!--[if gte IE 9]
+    <style type="text/css">
+    .gradient {
+    filter: none;
+    }
+    </style>
+    <![endif]-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { packages: ['corechart'], language: 'pt-br' });
+        //google.charts.setOnLoadCallback(drawChart);
+    </script><script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/49/loader.js"></script>
+<link id="load-css-0" rel="stylesheet" type="text/css" href="https://www.gstatic.com/charts/49/css/core/tooltip.css"><link id="load-css-1" rel="stylesheet" type="text/css" href="https://www.gstatic.com/charts/49/css/util/util.css"><script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/49/i18n/jsapi_compiled_i18n_default_module__pt_br.js"></script><script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/49/i18n/jsapi_compiled_i18n_graphics_module__pt_br.js"></script><script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/49/i18n/jsapi_compiled_i18n_ui_module__pt_br.js"></script><script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/49/i18n/jsapi_compiled_i18n_corechart_module__pt_br.js"></script></head>
+
+<body class="login">
+
+    <div class="container-fluid">
+    <div class="vertical-center">
+        <div class="login-wrapper">
+            <div class="text-center">
+                <img src="/Zaap/Zaap_SITE/Images/logo-zaap-laranja.png" class="img-responsive">
+            </div>
+<form action="/Zaap/Zaap_SITE/Login/JsonLogin?ReturnUrl=%2FZaap%2FZaap_SITE%2FHome" id="loginForm" method="post" novalidate="novalidate"><div class="validation-summary-valid panel panel-success">
+    <div class="panel-heading">
+        Dados validados
+
+    </div>
+    <div class="panel-body">
+        <ul class="list-unstyled">
+        </ul>
+    </div>
+</div><input name="__RequestVerificationToken" type="hidden" value="1LxqyS2lQCmLiBeEXw-NS39nzFIzsRJe-7gklpykeVNnJchG5h2TyJRPJFIU1FIL3EoR5MVPHXXAR3w-DkxF9NUWqYOh1f6xx4-qQIk6AGc1">                <div class="form-group">
+                    <label for="Login">Login </label>
+                    <input autofocus="autofocus" class="form-control" data-val="true" data-val-required="Informe o login" id="loginName" name="Login" type="text" value="">
+                    <span class="field-validation-valid" data-valmsg-for="Login" data-valmsg-replace="true"></span>
+                </div>
+                <div class="form-group">
+                    <label for="Senha">Senha</label>
+                    <input class="form-control" data-val="true" data-val-required="Informe a senha" id="Senha" name="Senha" type="password">
+                    <span class="field-validation-valid" data-valmsg-for="Senha" data-valmsg-replace="true"></span>
+                </div>
+                <div class="form-group">
+                    <button class="btn-base btn--block btn--primary" type="submit" data-loading-text="Aguarde ... " id="btn-entrar">Entrar </button>
+                </div>
+                <div class="forgot-pass"><a class="lnk cursor-pointer" onclick="app.login.esqueci(true);">Esqueci a senha</a></div>
+</form>            <form action="/Zaap/Zaap_SITE/Login/JsonEsqueci" id="esqueciForm" method="post" style="display:none;"><div class="validation-summary-valid panel panel-success">
+    <div class="panel-heading">
+        Dados validados
+
+    </div>
+    <div class="panel-body">
+        <ul class="list-unstyled">
+        </ul>
+    </div>
+</div><input name="__RequestVerificationToken" type="hidden" value="V8WEZIRtthWsudyZ3XjXz172kR9BGwa0xiR2G4YHgT8fFD0Rs_KWeP9IWoKSM67b2tmaQmHh6GBlbaK7fxvY8AYhrYmimHZ3i8_21pIDDYs1">                <div class="form-group">
+                    <label for="Usuario_Email">E-mail</label>
+                    <input autofocus="autofocus" class="form-control" id="loginName" name="Usuario.Email" type="text" value="">
+                    <span class="field-validation-valid" data-valmsg-for="Usuario.Email" data-valmsg-replace="true"></span>
+                </div>
+                <div class="form-group">
+                    <button class="btn-base btn--block btn--primary" type="submit" data-loading-text="Aguarde ... " id="btn-entrar">Enviar </button>
+                </div>
+                <div class="forgot-pass"><a class="lnk cursor-pointer" onclick="app.login.esqueci(false);">Fazer login</a></div>
+</form>        </div>
+    </div>
+</div>
+
+
+    <div class="footer">
+    <div class="container">
+        <footer class="site-footer row">
+            <div class="col-md-12 text-center">
+                <a href="/Zaap/Zaap_SITE/Home/Idioma" rel="ajax:modal" class="a-link text-hover transition" title="Trocar Idioma"> <i class="fa fa-globe"></i> <span>Trocar Idioma </span></a>
+            </div>
+        </footer>
+    </div>
+</div>
+
+    <script src="/Zaap/Zaap_SITE/bundles/layout?v=AgTGqyegSWEDwOycaCiXLVlerC9DmJI9yn7J1a0Hu8E1"></script>
+
+
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            //#102219
+            var strBaseUrl = 'http://10.10.5.149/Zaap/Zaap_SITE';
+            var strBaseRequest = '/Zaap/Zaap_SITE/';
+            var strSessao = '';
+            var strBaseHub = 'http://10.10.5.149/Zaap/Zaap_HUB//signalr/';
+            var strBaseHubAlt = '';
+            var intHubTimeout = '5000';
+            var booAutenticado = 'False';
+            try {
+                if (strBaseHubAlt != '') {
+                    app.utilizaHubAlternativo = true;
+
+                    $.ajax({
+                        type: 'GET',
+                        url: strBaseHub.replace('signalr', 'api') + '/Operador/VerificarAcessoHubZaap',
+                        async: true
+                    }).fail(function () {
+                        app.setupBaseHub(strBaseHubAlt, true);
+                        app.setup(strBaseUrl, strBaseRequest, strSessao, strBaseHubAlt);
+                    }).done(function () {
+                        app.setupBaseHub(strBaseHub, false);
+                        app.setup(strBaseUrl, strBaseRequest, strSessao, strBaseHub);
+                    });
+                }
+                else {
+                    app.setupBaseHub(strBaseHub, false);
+                    app.setup(strBaseUrl, strBaseRequest, strSessao, strBaseHub);
+                }
+            }
+            catch (e) { }
+
+            app.baseUrl = strBaseUrl;
+        });
+    </script>
+
+    
+    <script src="/Zaap/Zaap_SITE/bundles/login?v=ksigOWU-bPZF0XFBRWJ_3LwBpRDu4ZrzJ3Kj0jjjFPo1"></script>
+
+
+
+    <div id="discagemManualDiv" style="display: none;">
+        <div class="block-message-modal">
+            <div id="div-container-modal-loading" class="margin-top-10">
+                <section class="start-chat section-box loading">
+                    <p class="text">Aguarde… </p>
+                </section>
+            </div>
+            <div id="div-container-modal" class="margin-top-10" style="display: none;">
+            </div>
+        </div>
+    </div>
+    <!-- Backdrop loading -->
+    <div class="backdrop-loading" style="display:none;">
+        <span class="fa fa-4x fa-circle-o-notch fa-spin"></span>
+        <div style="margin-top:10px;font-weight:bold;font-size:18px;">Carregando...</div>
+    </div>
+
+</body></html>
