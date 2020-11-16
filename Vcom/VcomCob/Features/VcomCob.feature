@@ -9,30 +9,50 @@ Cenario: Acessar VcomCob
 	E informo usuario e senha
 	Entao e realizado o login com sucesso
 
-Cenario: Pesquisar cliente por Nome na Ficha de Cliente
+Esquema do Cenario: Pesquisar cliente por Nome na Ficha de Cliente
 	Dado que esteja logado
-	E realizo uma busca de cliente por nome
-	Então encontro o nome com sucesso na ficha de cliente
+	E realizo uma busca de cliente por nome <Nome>
+	Então encontro o nome com sucesso na ficha de cliente <Nome>
 
-Cenario: Pesquisar cliente CPF na Ficha de Cliente
-	Dado que esteja logado
-	E realizo uma busca de cliente por CPF
-	Então encontro o CPF com sucesso na ficha de cliente
+	Exemplos: 
+		|  Nome						 |
+		| "MARIA DA SILVA MIRANDA"   |
 
-Cenario: Pesquisar cliente por Contrato na Ficha de Cliente
+Esquema do Cenario: Pesquisar cliente CPF na Ficha de Cliente
 	Dado que esteja logado
-	E realizo uma busca de cliente por contrato
-	Então encontro o contrato com sucesso na ficha de cliente
+	E realizo uma busca de cliente por CPF <CPF>
+	Então encontro o CPF com sucesso na ficha de cliente <CPF>
+
+	Exemplos: 
+		|  CPF		      |
+		| "94707570763"   |
+
+Esquema do Cenario: Pesquisar cliente por Contrato na Ficha de Cliente
+	Dado que esteja logado
+	E realizo uma busca de cliente por contrato <Contrato>
+	Então encontro o contrato com sucesso na ficha de cliente <Contrato>
+
+	Exemplos: 
+		|  Contrato		      |
+		| "001010106646001"   |	
 		
-Cenario: Pesquisar cliente por Complemento do Contrato na Ficha de Cliente
+Esquema do Cenario: Pesquisar cliente por Complemento do Contrato na Ficha de Cliente
 	Dado que esteja logado
-	E realizo uma busca de cliente por complemento do contrato
-	Então encontro o complemento do contrato com sucesso na ficha de cliente
+	E realizo uma busca de cliente por complemento do contrato <CompContrato>
+	Então encontro o complemento do contrato com sucesso na ficha de cliente <CompContrato>
 
-Cenario: Pesquisar cliente por Nosso Numero
+	Exemplos: 
+		|  CompContrato		 |
+		| "01020201985000"   |
+
+Esquema do Cenario: Pesquisar cliente por Nosso Numero
 	Dado que esteja logado
-	E realizo uma busca de cliente por Nosso Numero
-	Então encontro o Nosso Numero com sucesso na ficha de cliente
+	E realizo uma busca de cliente por Nosso Numero <NossoNumero>
+	Então encontro o Nosso Numero com sucesso na ficha de cliente <NossoNumero>
+
+	Exemplos: 
+		|  NossoNumero		 |
+		| "01020201985000"   |
 
 Cenario: Acesso a tela Ficha do Cliente
 	Dado que esteja logado
