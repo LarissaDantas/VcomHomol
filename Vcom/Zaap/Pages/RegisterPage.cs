@@ -1,10 +1,6 @@
 ﻿using System.Threading;
 using OpenQA.Selenium;
-using System;
 using NUnit.Framework;
-using OpenQA.Selenium.Internal;
-using OpenQA.Selenium.Remote;
-using System.Linq;
 
 namespace Vcom.Pages
 {
@@ -51,10 +47,6 @@ namespace Vcom.Pages
         public By inpCompleTexto = By.CssSelector("#complTexto");
         public By inpCompleValor = By.CssSelector("#complValor");
         public By formInsereOcorrencia = By.CssSelector("#formInsereOcorrencia > div.button-holder.col-md-12 > input");
-        
-        
-
-        
 
 
         public void Logar()
