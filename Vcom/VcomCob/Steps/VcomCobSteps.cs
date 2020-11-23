@@ -114,6 +114,7 @@ namespace Vcom.VcomCob.Steps
         {
             VcomCobPage.Acessarfichadecliente();
             VcomCobPage.PesquisarPorNome("MARIA DA SILVA MIRANDA");
+            VcomCobPage.ResultadoEsperadoPesquisa("MARIA DA SILVA MIRANDA");
         }
 
         [Then(@"e apresentado a tela de Ficha do Cliente")]
@@ -125,55 +126,57 @@ namespace Vcom.VcomCob.Steps
         [When(@"seleciono inserção de serviços")]
         public void QuandoSelecionoInsercaoDeServicos()
         {
-            
+            VcomCobPage.PaginaFichaCliente();
+            VcomCobPage.SelecionarServiços();
         }
 
         [When(@"confirmo a inserção com todos os campos preenchidos")]
         public void QuandoConfirmoAInsercaoComTodosOsCamposPreenchidos()
         {
-            
+            VcomCobPage.IncluirServico();
         }
 
         [Then(@"a insersão é criada com sucesso")]
         public void EntaoAInsersaoECriadaComSucesso()
         {
-            
+            VcomCobPage.ValidarSucesso();
         }
 
         [Given(@"seleciono a Opção de Aplicação de filtros")]
         public void DadoSelecionoAOpcaoDeAplicacaoDeFiltros()
         {
-            
+            VcomCobPage.AcessarAplicacaoDeFiltros();
         }
 
         [Given(@"confirmo a Aplicação de filtros com todos os campos preenchidos")]
         public void DadoConfirmoAAplicacaoDeFiltrosComTodosOsCamposPreenchidos()
         {
-            
+            VcomCobPage.PesquisarFiltros();
         }
 
         [Then(@"é criado o filtro com sucesso")]
         public void EntaoECriadoOFiltroComSucesso()
         {
-            
+            VcomCobPage.AplicarFiltros();
         }
 
         [Given(@"seleciono a Opção de Aplicação de sequência")]
         public void DadoSelecionoAOpcaoDeAplicacaoDeSequencia()
         {
-            
+            VcomCobPage.AcessarAplicaçãoDeSequencia();
+            HomePage.GoTo(ConfigurationManager.AppSettings["AplicacaoDeSequenciaURL"]);
         }
 
         [Given(@"confirmo a Aplicação de sequência com todos os campos preenchidos")]
         public void DadoConfirmoAAplicacaoDeSequenciaComTodosOsCamposPreenchidos()
         {
-            
+            VcomCobPage.PesquisarSequencia();
         }
 
         [Then(@"é criado a Aplicação de sequência com sucesso")]
         public void EntaoECriadoAAplicacaoDeSequenciaComSucesso()
         {
-            
+            VcomCobPage.AplicarSequencia();
         }
 
 

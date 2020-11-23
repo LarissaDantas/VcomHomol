@@ -13,6 +13,8 @@ namespace Vcom.Pages
         public By logoVcomCob = By.CssSelector("#appDiv > div > div > h3");
         public By btnMenu = By.XPath("//*[@id='navMenuPrincipal']/ul[1]/li[1]/a");
         public By selectFichaCliente = By.XPath("//*[@id='M3053']/a");
+        public By selectAplicaçãodeFiltros = By.XPath("//*[@id='M6006']/a");
+        public By selectAplicaçãodeSequencia = By.XPath("//*[@id='M6006']/a");
         public By inputPesquisaMenu = By.CssSelector("#pesquisaMenuNovo");
         public By inputPesquisaCliente = By.CssSelector("#txtPesquisa");
         public By btnPesquisarCliente = By.CssSelector("#btn");
@@ -22,6 +24,28 @@ namespace Vcom.Pages
         public By btnPesquisarPorCompContrato = By.XPath("//*[@id='divPesquisaPessoa']/div/div/div[2]/div[2]/div/div/div/ul/li[4]/a");
         public By selectPesquisar = By.XPath("//*[@id='divReusltadoPesquisa']/table/tbody/tr/td[1]");
         public By titleFichaCliente = By.CssSelector("#appDiv h3");
+        public By btnServicos = By.CssSelector("ul[id='ulMenuFichaListagens'] li[menu='ServicosTitulo']");
+        public By btnInserirServico = By.CssSelector("#btnInserirServico");
+        public By btnConfirmarSelecao = By.CssSelector("#btn-confirmar-selecao");
+        public By selectServicos = By.CssSelector("#selServicosInd");
+        public By selectOpcaoServicos = By.CssSelector("#selServicosInd > option:nth-child(2)");
+        public By txtMotivoInclusao = By.CssSelector("#txtMotivoInclusao");
+        public By txtObservacao = By.CssSelector("#txtObservacao");
+        public By btnLocalizar = By.CssSelector("#nomeFiltro");
+        public By btnConfirmarServico = By.CssSelector("#btn-confirmarServico");
+        public By servicoSucesso = By.CssSelector("#divSucessoServico > div");
+        public By btnLocalizarFiltro = By.CssSelector("#btn-Localizar");
+        public By btnAplicarFiltro = By.CssSelector("#btn-aplicar-filtros");
+        public By btnLocalizarSequencia = By.CssSelector("#btn-Localizar");
+        public By descricaoFiltro = By.CssSelector("#tbNomeFiltro");
+        public By btnFiltrar = By.CssSelector("#btn-Filtrar");
+        public By btnNotificacoes = By.CssSelector("#menuNotificacoes");
+        public By modalSequencia = By.CssSelector("#btn-yes-modal-aplicar-sequencia");
+        public By btnAplicarSequencia = By.CssSelector("#btn-aplicar-sequencia");
+        public By checkboxFiltros = By.CssSelector("#ListaFiltros_0__Selecionado");
+        public By checkboxSequencia = By.CssSelector("#ListaFiltrosSequencia_0__Selecionado");
+
+        
 
         public void Logar()
         {
@@ -134,6 +158,109 @@ namespace Vcom.Pages
             ToClick(selectPesquisar);
             Thread.Sleep(2000);
             WaitElementVisible(titleFichaCliente);
+        }
+
+        public void SelecionarServiços()
+        {
+            Thread.Sleep(2000);
+            ToClick(btnServicos);
+            Thread.Sleep(2000);
+            ToClick(btnInserirServico);
+            Thread.Sleep(2000);
+            ToClick(btnConfirmarSelecao);
+        }
+
+        public void IncluirServico()
+        {
+            Thread.Sleep(2000);
+            ToClick(selectServicos);
+            Thread.Sleep(2000);
+            ToClick(selectOpcaoServicos);
+            Thread.Sleep(2000);
+            ToClick(txtMotivoInclusao);
+            Thread.Sleep(2000);
+            ToWrite(txtMotivoInclusao, "Motivo Teste");
+            Thread.Sleep(2000);
+            TAB(txtObservacao);
+            Thread.Sleep(2000);
+            ToClick(btnConfirmarServico);
+        }
+
+        public void ValidarSucesso()
+        {
+            Thread.Sleep(1000);
+            WaitElementVisible(servicoSucesso);
+        }
+
+        public void AcessarAplicacaoDeFiltros()
+        {
+            Thread.Sleep(3000);
+            WaitElementVisible(btnMenu);
+            ToClick(btnMenu);
+            ToClick(inputPesquisaMenu);
+            Thread.Sleep(1000);
+            ToWrite(inputPesquisaMenu, "Aplicação de Filtros");
+            WaitElementVisible(selectAplicaçãodeFiltros);
+            ToClick(selectAplicaçãodeFiltros);
+            Thread.Sleep(2000);
+        }
+
+        public void PesquisarFiltros()
+        {
+            Thread.Sleep(1000);
+            ToClick(btnLocalizar);
+            Thread.Sleep(1000);
+            ToWrite(btnLocalizar, "Alma");
+            Thread.Sleep(1000);
+            ToClick(btnLocalizarFiltro);
+        }
+
+        public void AplicarFiltros()
+        {
+            Thread.Sleep(1000);
+            BarradeRolagem();
+            Thread.Sleep(1000);
+            ToClick(checkboxFiltros);
+            BarradeRolagemSubindo();
+            ToClick(btnAplicarFiltro);
+            ValidarLogoZaap();
+        }
+
+        public void AcessarAplicaçãoDeSequencia()
+        {
+            Thread.Sleep(3000);
+            WaitElementVisible(btnMenu);
+            ToClick(btnMenu);
+            ToClick(inputPesquisaMenu);
+            Thread.Sleep(1000);
+            ToWrite(inputPesquisaMenu, "Aplicação de sequência");
+            WaitElementVisible(selectAplicaçãodeSequencia);
+        }
+
+        public void PesquisarSequencia()
+        {
+            Thread.Sleep(2000);
+            ToClick(btnLocalizarSequencia);
+            Thread.Sleep(1000);
+            ToClick(descricaoFiltro);
+            Thread.Sleep(1000);
+            ToWrite(descricaoFiltro, "Alma");
+            Thread.Sleep(1000);
+            ToClick(btnFiltrar);           
+        }
+
+        public void AplicarSequencia()
+        {
+            Thread.Sleep(1000);
+            ToClick(checkboxSequencia);
+            Thread.Sleep(1000);
+            ToClick(btnAplicarSequencia);
+            Thread.Sleep(1000);
+            ToClick(modalSequencia);
+            ValidarLogoZaap();
+            Thread.Sleep(1000);
+            ToClick(btnNotificacoes);
+            Thread.Sleep(1000);
         }
     }
 }

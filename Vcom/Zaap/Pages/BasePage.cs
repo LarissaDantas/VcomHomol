@@ -23,6 +23,12 @@ namespace Vcom.Pages
             js.ExecuteScript("scrollBy(0,850);");
         }
 
+        public void BarradeRolagemSubindo()
+        {
+            IJavaScriptExecutor js = driver as IJavaScriptExecutor;
+            js.ExecuteScript("scroll(250, 0);");
+        }
+
         public void WaitElement(By path)
         {
             var Wait = new WebDriverWait(driver, TimeSpan.FromSeconds(WAIT_ELEMENT_SECONDS));
@@ -62,8 +68,15 @@ namespace Vcom.Pages
             WaitElementVisible(path);
             ToLocate(path).Clear();
             ToLocate(path).SendKeys(text);
+            ToLocate(path).SendKeys(Keys.Tab);
         }
 
+        public void TAB(By path)
+        {
+            WaitElementVisible(path);
+            ToLocate(path).Click();
+            ToLocate(path).SendKeys(Keys.Tab);
+        }
         public string GetText(By path)
         {
             WaitElementVisible(path);
