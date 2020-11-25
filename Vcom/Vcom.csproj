@@ -86,6 +86,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CobWeb\Page\CobWebPage.cs" />
+    <Compile Include="CobWeb\Steps\CobWebSteps.cs" />
     <Compile Include="VcomCob\Page\VcomCobPage.cs" />
     <Compile Include="VcomCob\Steps\VcomCobSteps.cs" />
     <Compile Include="Zaap\Browsers\Browsers.cs" />
@@ -102,6 +104,7 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="CobWeb\Features\CobWeb.feature" />
     <None Include="VcomCob\Features\VcomCob.feature" />
     <None Include="Zaap\Features\Zaap.feature" />
     <None Include="packages.config">
