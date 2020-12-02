@@ -17,6 +17,11 @@ namespace Vcom.Pages
             driver = (IWebDriver)ScenarioContext.Current["driver"];
         }
 
+        public void JavaScript(string script)
+        {
+            IJavaScriptExecutor jse = (IJavaScriptExecutor)driver;
+            string title = (string)jse.ExecuteScript(script);
+        }
         public void BarradeRolagem()
         {
             IJavaScriptExecutor js = driver as IJavaScriptExecutor;
@@ -71,7 +76,7 @@ namespace Vcom.Pages
             ToLocate(path).SendKeys(Keys.Tab);
         }
 
-        public void TAB(By path)
+            public void TAB(By path)
         {
             WaitElementVisible(path);
             ToLocate(path).Click();
