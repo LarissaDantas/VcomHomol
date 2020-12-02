@@ -21,7 +21,7 @@ namespace Vcom.VcomCob.Steps
         [Given(@"que eu acesso o VcomCob")]
         public void DadoQueEuAcessoOVcomCob()
         {
-            HomePage.GoTo(ConfigurationManager.AppSettings["VcomCobURL"]);
+            HomePage.GoTo(ConfigurationManager.AppSettings["CobWebURL"]);
         }
 
         [Given(@"informo usuario e senha")]
