@@ -19,109 +19,71 @@ Esquema do Cenario: Emissão de boleto à vista (com impressão)
 
 	Exemplos: 
 	  | Data         |
-	  | "02/12/2020" |
+	  | "07/12/2020" |
 
-#Cenario: Emissão de boleto parcelado (com impressão)
-#	Dado que esteja com perfil logado com cliente pesquisado via <CPF>, <Contrato> ou <Nome>
-#	E com o contrato devido selecionado
-#	Então  escolho o modo de pagamento parcelado
-#	E seleciono se haverá ou não entrada, a quantidade de parcelas e periodicidade
-#	Quando clico no botão "Pronto, finalize esta negociação"
-#	Então  clico em visualizar 
-#	E  assim imprimo o boleto
-#
-#	
-#Cenario: Envio de boleto por e-mail
-#	Dado que esteja com perfil logado com cliente pesquisado via <CPF>, <Contrato> ou <Nome>
-#	E com o contrato devido selecionado
-#	Então  escolho o modo de pagamento
-#	Quando clico no botão "Pronto, finalize esta negociação"
-#	Então  clico no botão "e-mail"
-#	E seleciono o e-mail já cadastrado ou insiro outro
-#	Então clico em enviar e recebo a mensagem de sucesso
-#
-#	
-#Cenario: Envio de boleto por SMS
-#	Dado que esteja com perfil logado com cliente pesquisado via <CPF>, <Contrato> ou <Nome>
-#	E com o contrato devido selecionado
-#	Então  escolho o modo de pagamento
-#	Quando clico no botão "Pronto, finalize esta negociação"
-#	Então clico no botão "SMS"
-#	E seleciono o número cadastrado ou insiro outro
-#	E escolho o tipo de serviço e o tipo de mensagem
-#	Então clico em "enviar agora" e recebo a mensagem de sucesso
-#
-#Cenario: Listar últimas negociações
-#	Dado que esteja com perfil logado com cliente pesquisado via <CPF>, <Contrato> ou <Nome>
-#	E com o contrato devido selecionado
-#	Então  clico em "+detalhes" no canto inferior direito da tela
-#	E encontro a listagem de negociações
-#
-#
-#Cenario: Reimpressão de boleto
-#    Dado que esteja com perfil logado com cliente pesquisado via <CPF>, <Contrato> ou <Nome>
-#	E com o contrato devido selecionado
-#	Então  clico em "+detalhes" no canto inferior direito da tela
-#	E clico no ícone de expansão do lado esquerdo do número do contrato
-#	Então clico em "opções"
-#	E assim clico em reimprimir e reimprimo com sucesso
-#
-#
-#Cenario: Cancelamento de boleto
-#	Dado que esteja com perfil logado com cliente pesquisado via <CPF>, <Contrato> ou <Nome>
-#	E com o contrato devido selecionado
-#	Então  clico em "+detalhes" no canto inferior direito da tela
-#	E clico no ícone de expansão do lado esquerdo do número do contrato
-#	Então clico em "opções"
-#	E assim clico em "cancelar" e cancelo com sucesso o boleto
-#	
-#
-#Cenario: Estorno de parcelamento
-#	Dado que esteja com perfil logado com cliente pesquisado via <CPF>, <Contrato> ou <Nome>
-#	E com o contrato devido selecionado
-#	Então  clico no ícone de expansão do lado superior direito
-#	E clico em "cancelar negociação"
-#	Então insiro o motivo e confirmo
-#
-#
-#Cenario: Gravação de cálculo
-#	Dado que esteja com perfil logado com cliente pesquisado via <CPF>, <Contrato> ou <Nome>
-#	E com o contrato devido selecionado
-#	Então  escolho o modo de pagamento
-#	E clico no botão expansivo ao lado direito de "Pronto, finalize esta negociação"
-#	Então clico em "Apenas grave essa negociação"
-#	Então  gravo com sucesso e posso conferir em "+detalhes"
-#
-#Esquema do Cenario: Emissão de boleto de cálculo gravado
-#	Dado que gravei um cálculo
-#	Quando clico "+detalhes"
-#	E clico em "opções"
-#	Então clico em emitir
-#	E então emiti com sucesso o boleto
-#	
-#
-#Esquema do Cenário:  Abertura de cálculo gravado
-#	Dado que gravei um cálculo
-#	Quando clico "+detalhes"
-#	E clico em "opções"
-#	Então clico em "abrir"
-#	E assim abro com sucesso o cálculo
-#
-#
-#Esquema do Cenário: Cancelamento de cálculo gravado
-#	Dado que gravei um cálculo
-#	Quando clico "+detalhes"
-#	E clico em "opções"
-#	Então clico em "cancelar" e confirmo
-#	E assim cancelo com sucesso
-#
-#Cenário: Recebimento
-#	Dado que esteja com perfil logado com cliente pesquisado via <CPF>, <Contrato> ou <Nome>
-#	E com o contrato devido selecionado
-#	Então  escolho o modo de pagamento
-#	E clico no botão expansivo ao lado direito de "Pronto, finalize esta negociação"
-#	Então clico em "receba o pagamento por esta negociação"
-#	E escolho a forma de pagamento
-#	E insiro os dados do pagamento
-#	Então confirmo o pagamento
-#	E o pagamento é confirmado com sucesso
+Esquema do Cenario: Emissão de boleto parcelado (com impressão)
+	Dado que eu acesso o VcomCalc com cliente negociavel
+	E realizo uma negociação parcelado <Data>
+	Então e apresentado com sucesso o boleto para impressao
+
+	Exemplos: 
+	  | Data         |
+	  | "07/12/2020" |
+	
+Esquema do Cenario: Envio de boleto por e-mail
+	Dado que eu acesso o VcomCalc com cliente negociavel
+	E realizo uma negociação a vista <Data>
+	Então e apresentado com sucesso o boleto para email
+
+	Exemplos: 
+	  | Data         |
+	  | "07/12/2020" |
+	
+Esquema do Cenario: Envio de boleto por SMS
+	Dado que eu acesso o VcomCalc com cliente negociavel
+	E realizo uma negociação a vista <Data>
+	Então e apresentado com sucesso o boleto para o sms
+
+	Exemplos: 
+	  | Data         |
+	  | "07/12/2020" |
+
+Cenario: Listar últimas negociações
+	Dado que eu acesso o VcomCalc com cliente negociavel
+	E clico em detalhes
+	Então visualiso as ultimas negociaçoes
+
+Cenario: Reimpressão de boleto
+    Dado que eu acesso o VcomCalc com cliente negociavel
+	E seleciono a opção de reimprimir
+	Entao visualizo a reimpressão com sucesso
+
+Cenario: Cancelamento de boleto
+	Dado que eu acesso o VcomCalc com cliente negociavel
+	E seleciono a opção de cancelar boletos
+	Entao o boleto é cancelado com sucesso
+
+Cenario: Gravação de cálculo
+	Dado que eu acesso o VcomCalc com cliente negociavel
+	E seleciono a opção de gravar negociação
+	Então é gravado com sucesso
+
+Cenario: Emissão de boleto de cálculo gravado
+	Dado que eu acesso o VcomCalc com cliente negociavel
+	E seleciono a opção de emitir boleto
+	Entao visualizo a reimpressão com sucesso
+
+Cenário: Abertura de cálculo gravado
+	Dado que eu acesso o VcomCalc com cliente negociavel
+	E seleciono abrir calculo gravado
+	Entao visualizo a negociação em aberto
+
+Cenário: Cancelamento de cálculo gravado
+	Dado que eu acesso o VcomCalc com cliente negociavel
+	E seleciono cancelamento de cálculo gravado
+	Entao visualizo o cancelamento com sucesso
+
+Cenário: Recebimento
+	Dado que eu acesso o VcomCalc com cliente negociavel
+	E seleciono a opção de recebimento
+	Então e confirmado o recebimento

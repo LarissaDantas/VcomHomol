@@ -90,7 +90,7 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Emissão de boleto à vista (com impressão)")]
-        [NUnit.Framework.TestCaseAttribute("\"02/12/2020\"", null)]
+        [NUnit.Framework.TestCaseAttribute("\"07/12/2020\"", null)]
         public virtual void EmissaoDeBoletoAVistaComImpressao(string data, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Emissão de boleto à vista (com impressão)", null, exampleTags);
@@ -101,6 +101,209 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("que eu acesso o VcomCalc com cliente negociavel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line 17
  testRunner.And(string.Format("realizo uma negociação a vista {0}", data), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 18
+ testRunner.Then("e apresentado com sucesso o boleto para impressao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Emissão de boleto parcelado (com impressão)")]
+        [NUnit.Framework.TestCaseAttribute("\"07/12/2020\"", null)]
+        public virtual void EmissaoDeBoletoParceladoComImpressao(string data, string[] exampleTags)
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Emissão de boleto parcelado (com impressão)", null, exampleTags);
+#line 24
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 25
+ testRunner.Given("que eu acesso o VcomCalc com cliente negociavel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
+#line 26
+ testRunner.And(string.Format("realizo uma negociação parcelado {0}", data), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 27
+ testRunner.Then("e apresentado com sucesso o boleto para impressao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Envio de boleto por e-mail")]
+        [NUnit.Framework.TestCaseAttribute("\"07/12/2020\"", null)]
+        public virtual void EnvioDeBoletoPorE_Mail(string data, string[] exampleTags)
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Envio de boleto por e-mail", null, exampleTags);
+#line 33
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 34
+ testRunner.Given("que eu acesso o VcomCalc com cliente negociavel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
+#line 35
+ testRunner.And(string.Format("realizo uma negociação a vista {0}", data), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 36
+ testRunner.Then("e apresentado com sucesso o boleto para email", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Envio de boleto por SMS")]
+        [NUnit.Framework.TestCaseAttribute("\"07/12/2020\"", null)]
+        public virtual void EnvioDeBoletoPorSMS(string data, string[] exampleTags)
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Envio de boleto por SMS", null, exampleTags);
+#line 42
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 43
+ testRunner.Given("que eu acesso o VcomCalc com cliente negociavel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
+#line 44
+ testRunner.And(string.Format("realizo uma negociação a vista {0}", data), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 45
+ testRunner.Then("e apresentado com sucesso o boleto para o sms", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Listar últimas negociações")]
+        public virtual void ListarUltimasNegociacoes()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Listar últimas negociações", null, ((string[])(null)));
+#line 51
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 52
+ testRunner.Given("que eu acesso o VcomCalc com cliente negociavel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
+#line 53
+ testRunner.And("clico em detalhes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 54
+ testRunner.Then("visualiso as ultimas negociaçoes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Reimpressão de boleto")]
+        public virtual void ReimpressaoDeBoleto()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Reimpressão de boleto", null, ((string[])(null)));
+#line 56
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 57
+    testRunner.Given("que eu acesso o VcomCalc com cliente negociavel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
+#line 58
+ testRunner.And("seleciono a opção de reimprimir", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 59
+ testRunner.Then("visualizo a reimpressão com sucesso", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Cancelamento de boleto")]
+        public virtual void CancelamentoDeBoleto()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cancelamento de boleto", null, ((string[])(null)));
+#line 61
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 62
+ testRunner.Given("que eu acesso o VcomCalc com cliente negociavel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
+#line 63
+ testRunner.And("seleciono a opção de cancelar boletos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 64
+ testRunner.Then("o boleto é cancelado com sucesso", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Gravação de cálculo")]
+        public virtual void GravacaoDeCalculo()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Gravação de cálculo", null, ((string[])(null)));
+#line 66
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 67
+ testRunner.Given("que eu acesso o VcomCalc com cliente negociavel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
+#line 68
+ testRunner.And("seleciono a opção de gravar negociação", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 69
+ testRunner.Then("é gravado com sucesso", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Emissão de boleto de cálculo gravado")]
+        public virtual void EmissaoDeBoletoDeCalculoGravado()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Emissão de boleto de cálculo gravado", null, ((string[])(null)));
+#line 71
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 72
+ testRunner.Given("que eu acesso o VcomCalc com cliente negociavel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
+#line 73
+ testRunner.And("seleciono a opção de emitir boleto", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 74
+ testRunner.Then("visualizo a reimpressão com sucesso", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Abertura de cálculo gravado")]
+        public virtual void AberturaDeCalculoGravado()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Abertura de cálculo gravado", null, ((string[])(null)));
+#line 76
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 77
+ testRunner.Given("que eu acesso o VcomCalc com cliente negociavel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
+#line 78
+ testRunner.And("seleciono abrir calculo gravado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 79
+ testRunner.Then("visualizo a negociação em aberto", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Cancelamento de cálculo gravado")]
+        public virtual void CancelamentoDeCalculoGravado()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cancelamento de cálculo gravado", null, ((string[])(null)));
+#line 81
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 82
+ testRunner.Given("que eu acesso o VcomCalc com cliente negociavel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
+#line 83
+ testRunner.And("seleciono cancelamento de cálculo gravado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 84
+ testRunner.Then("visualizo o cancelamento com sucesso", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Recebimento")]
+        public virtual void Recebimento()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Recebimento", null, ((string[])(null)));
+#line 86
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 87
+ testRunner.Given("que eu acesso o VcomCalc com cliente negociavel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
+#line 88
+ testRunner.And("seleciono a opção de recebimento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line 89
+ testRunner.Then("e confirmado o recebimento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
 #line hidden
             this.ScenarioCleanup();
         }
