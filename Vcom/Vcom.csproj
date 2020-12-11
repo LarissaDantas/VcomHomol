@@ -109,6 +109,7 @@
     <None Include="CobWeb\Features\CobWeb.feature" />
     <None Include="VcomCalc\Features\VComCalc.feature" />
     <None Include="VcomCob\Features\VcomCob.feature" />
+    <None Include="VcServicos\Features\VcServicos.feature" />
     <None Include="Zaap\Features\Zaap.feature" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
@@ -125,8 +126,8 @@
     <Error Condition="!Exists('..\packages\NUnit3TestAdapter.3.15.1\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit3TestAdapter.3.15.1\build\net35\NUnit3TestAdapter.props'))" />
     <Error Condition="!Exists('..\packages\SpecFlow.Tools.MsBuild.Generation.3.0.225\build\SpecFlow.Tools.MsBuild.Generation.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SpecFlow.Tools.MsBuild.Generation.3.0.225\build\SpecFlow.Tools.MsBuild.Generation.props'))" />
     <Error Condition="!Exists('..\packages\SpecFlow.Tools.MsBuild.Generation.3.0.225\build\SpecFlow.Tools.MsBuild.Generation.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SpecFlow.Tools.MsBuild.Generation.3.0.225\build\SpecFlow.Tools.MsBuild.Generation.targets'))" />
-    <Error Condition="!Exists('..\packages\Selenium.WebDriver.ChromeDriver.85.0.4183.8300\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.ChromeDriver.85.0.4183.8300\build\Selenium.WebDriver.ChromeDriver.targets'))" />
+    <Error Condition="!Exists('..\packages\Selenium.WebDriver.ChromeDriver.87.0.4280.8800\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.ChromeDriver.87.0.4280.8800\build\Selenium.WebDriver.ChromeDriver.targets'))" />
   </Target>
   <Import Project="..\packages\SpecFlow.Tools.MsBuild.Generation.3.0.225\build\SpecFlow.Tools.MsBuild.Generation.targets" Condition="Exists('..\packages\SpecFlow.Tools.MsBuild.Generation.3.0.225\build\SpecFlow.Tools.MsBuild.Generation.targets')" />
-  <Import Project="..\packages\Selenium.WebDriver.ChromeDriver.85.0.4183.8300\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.ChromeDriver.85.0.4183.8300\build\Selenium.WebDriver.ChromeDriver.targets')" />
+  <Import Project="..\packages\Selenium.WebDriver.ChromeDriver.87.0.4280.8800\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.ChromeDriver.87.0.4280.8800\build\Selenium.WebDriver.ChromeDriver.targets')" />
 </Project>

@@ -1,10 +1,10 @@
 #language: pt-BR
 
 @Chrome
-Funcionalidade: VComCalc
+Funcionalidade: VcServicos
 
 
-Esquema do Cenario: 01 - Acessar o VcomCalc
+Esquema do Cenario: 01 - Acessar o VcServicos
 	Dado que eu acesso o VComCalc Sistemas
 	Então é apresentada as versões dos sistemas <Versao>
 

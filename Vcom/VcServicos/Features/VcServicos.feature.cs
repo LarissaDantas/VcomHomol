@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace GloboChallenge.VcomCalc.Features
+namespace GloboChallenge.VcServicos.Features
 {
     using TechTalk.SpecFlow;
     
@@ -18,21 +18,21 @@ namespace GloboChallenge.VcomCalc.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.0.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("VComCalc")]
+    [NUnit.Framework.DescriptionAttribute("VcServicos")]
     [NUnit.Framework.CategoryAttribute("Chrome")]
-    public partial class VComCalcFeature
+    public partial class VcServicosFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "VComCalc.feature"
+#line 1 "VcServicos.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("pt-BR"), "VComCalc", null, ProgrammingLanguage.CSharp, new string[] {
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("pt-BR"), "VcServicos", null, ProgrammingLanguage.CSharp, new string[] {
                         "Chrome"});
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -72,11 +72,11 @@ namespace GloboChallenge.VcomCalc.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("01 - Acessar o VcomCalc")]
+        [NUnit.Framework.DescriptionAttribute("01 - Acessar o VcServicos")]
         [NUnit.Framework.TestCaseAttribute("\"1.00.201202.01\"", null)]
-        public virtual void _01_AcessarOVcomCalc(string versao, string[] exampleTags)
+        public virtual void _01_AcessarOVcServicos(string versao, string[] exampleTags)
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("01 - Acessar o VcomCalc", null, exampleTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("01 - Acessar o VcServicos", null, exampleTags);
 #line 7
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
