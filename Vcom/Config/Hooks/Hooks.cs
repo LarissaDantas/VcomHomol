@@ -28,7 +28,7 @@ namespace Vcom.Hooks
 
         
 
-        [AfterScenario]
+            [AfterScenario]
             public void AfterScenario()
             {
 

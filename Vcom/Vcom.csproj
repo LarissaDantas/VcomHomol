@@ -92,14 +92,14 @@
     <Compile Include="VcomCalc\Steps\VcomCalcSteps.cs" />
     <Compile Include="VcomCob\Page\VcomCobPage.cs" />
     <Compile Include="VcomCob\Steps\VcomCobSteps.cs" />
-    <Compile Include="Zaap\Browsers\Browsers.cs" />
+    <Compile Include="Config\Browsers\Browsers.cs" />
     <Compile Include="Zaap\Features\Zaap.feature.cs" />
     <Compile Include="Zaap\Steps\RegisterSteps.cs" />
-    <Compile Include="Zaap\Hooks\Hooks.cs" />
+    <Compile Include="Config\Hooks\Hooks.cs" />
     <Compile Include="Zaap\Pages\BasePage.cs" />
     <Compile Include="Zaap\Pages\HomePage.cs" />
     <Compile Include="Zaap\Pages\RegisterPage.cs" />
-    <Compile Include="Zaap\Utils\Utils.cs" />
+    <Compile Include="Config\Utils\Utils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
