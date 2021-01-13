@@ -32,11 +32,10 @@ namespace Vcom.Hooks
             public void AfterScenario()
             {
 
-            if (ScenarioContext.Current.TestError != null)
-            {
-                var screen = new ScreenShot();
-                screen.ToTakeScreenShot();
-            }
+            
+             var screen = new ScreenShot();
+             screen.ToTakeScreenShot();
+            
 
 
             var end = new Browser();
