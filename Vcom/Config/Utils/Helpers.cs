@@ -66,7 +66,7 @@ namespace GloboChallenge.Config.Utils
                     break;
                 case TipoPesquisa.Email:
                     MailAddress addr = new MailAddress(nome);
-                    retorno = string.Concat("{0}@#####", addr.User);
+                    retorno = string.Concat("{0}@{1}", addr.User, string.Concat(Enumerable.Repeat('#', addr.Host.Length).ToArray()));
                     break;
                 //case TipoPesquisa.Endereco:
                 //    retorno ="";

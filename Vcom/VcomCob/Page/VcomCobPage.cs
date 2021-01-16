@@ -118,11 +118,9 @@ namespace Vcom.Pages
 
         public void ResultadoEsperadoPesquisa(string nome, TipoPesquisa tipoPesquisa =new TipoPesquisa())
         {
-            var y = GetText(By.XPath("//*[@id='divReusltadoPesquisa']/table/tbody/tr[1]"));
-            var x = Helpers.AplicarMascaraPorTipo(nome, tipoPesquisa);
-            //var x = GetText(By.XPath("//*[@id='divReusltadoPesquisa']/table/tbody/tr/td[text()='" + Helpers.AplicarMascaraPorTipo(nome, tipoPesquisa) + "']"));
-            Assert.True(y.Contains(x),"Valor esperado: " +y+" é diferente do valor encontrado: "+x);
-            //Assert.AreEqual(nome, GetText(By.XPath("//*[@id='divReusltadoPesquisa']/table/tbody/tr/td[text()='" + nome + "']")));
+            var elemento = GetText(By.XPath("//*[@id='divReusltadoPesquisa']/table/tbody/tr[1]"));
+            var esperado = Helpers.AplicarMascaraPorTipo(nome, tipoPesquisa);
+            Assert.True(elemento.Contains(esperado),"Valor esperado: " +elemento+" é diferente do valor encontrado: "+esperado);
         }
 
       

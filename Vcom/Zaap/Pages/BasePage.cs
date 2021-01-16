@@ -60,7 +60,7 @@ namespace Vcom.Pages
         {
             
             var element = WaitElement(path);
-            Console.WriteLine(element.Displayed);
+            //Console.WriteLine(element.Displayed);
             return element.Displayed;
         }
 

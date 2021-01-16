@@ -4,38 +4,36 @@ using System;
 using System.Linq;
 using TechTalk.SpecFlow;
 using System.IO;
-
+using OpenQA.Selenium;
 
 namespace Vcom.Hooks
 {
     [Binding]
 
-        public sealed class Hooks
+    public sealed class Hooks
+    {
+        Browser browser;
+        [BeforeScenario]
+        public void BeforeScenario()
         {
-            [BeforeScenario]
-            public void BeforeScenario()
-            {
-                var toStart = new Browser();
+          browser = new Browser();
 
-                if (ScenarioContext.Current.ScenarioInfo.Tags.Contains("Chrome") ||
-                    (FeatureContext.Current.FeatureInfo.Tags.Contains("Chrome")))
-                    toStart.ChooseBrowser("Chrome");
+            if (ScenarioContext.Current.ScenarioInfo.Tags.Contains("Chrome") ||
+                (FeatureContext.Current.FeatureInfo.Tags.Contains("Chrome")))
+                browser.ChooseBrowser("Chrome");
 
-                if (ScenarioContext.Current.ScenarioInfo.Tags.Contains("Firefox") ||
-                    (FeatureContext.Current.FeatureInfo.Tags.Contains("Firefox")))
-                    toStart.ChooseBrowser("Firefox");
-            }
-
-        
-
-            [AfterScenario]
-            public void AfterScenario()
-            {
-             var screen = new ScreenShot();
-             screen.ToTakeScreenShot();
-            var end = new Browser();
-                end.ToFinishBrowser();
-            }
+            if (ScenarioContext.Current.ScenarioInfo.Tags.Contains("Firefox") ||
+                (FeatureContext.Current.FeatureInfo.Tags.Contains("Firefox")))
+                browser.ChooseBrowser("Firefox");
         }
+
+        [AfterScenario]
+        public void AfterScenario()
+        {
+            var screen = new ScreenShot();
+            screen.ToTakeScreenshot((IWebDriver)ScenarioContext.Current["driver"]);
+            browser.ToFinishBrowser();
+        }
+    }
 
 }
