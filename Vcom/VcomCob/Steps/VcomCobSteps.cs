@@ -1,6 +1,7 @@
 ﻿using Vcom.Pages;
 using TechTalk.SpecFlow;
 using System.Configuration;
+using static GloboChallenge.Config.Utils.Helpers;
 
 namespace Vcom.VcomCob.Steps
 {
@@ -21,7 +22,7 @@ namespace Vcom.VcomCob.Steps
         [Given(@"que eu acesso o VcomCob")]
         public void DadoQueEuAcessoOVcomCob()
         {
-            HomePage.GoTo(ConfigurationManager.AppSettings["CobWebURL"]);
+            HomePage.GoTo(ConfigurationManager.AppSettings["VcomCobURL"]);
         }
 
         [Given(@"informo usuario e senha")]
@@ -54,7 +55,8 @@ namespace Vcom.VcomCob.Steps
         [Then(@"encontro o nome com sucesso na ficha de cliente ""(.*)""")]
         public void EntaoEncontroONomeComSucessoNaFichaDeCliente(string nome)
         {
-            VcomCobPage.ResultadoEsperadoPesquisa(nome);
+
+            VcomCobPage.ResultadoEsperadoPesquisa(nome,TipoPesquisa.Nome);
         }
 
         [Given(@"realizo uma busca de cliente por CPF ""(.*)""")]
@@ -67,7 +69,7 @@ namespace Vcom.VcomCob.Steps
         [Then(@"encontro o CPF com sucesso na ficha de cliente ""(.*)""")]
         public void EntaoEncontroOCPFComSucessoNaFichaDeCliente(string CPF)
         {
-            VcomCobPage.ResultadoEsperadoPesquisa(CPF);
+            VcomCobPage.ResultadoEsperadoPesquisa(CPF,TipoPesquisa.CPF);
         }
 
         [Given(@"realizo uma busca de cliente por contrato ""(.*)""")]
@@ -114,7 +116,7 @@ namespace Vcom.VcomCob.Steps
         {
             VcomCobPage.Acessarfichadecliente();
             VcomCobPage.PesquisarPorNome("MARIA DA SILVA MIRANDA");
-            VcomCobPage.ResultadoEsperadoPesquisa("MARIA DA SILVA MIRANDA");
+            VcomCobPage.ResultadoEsperadoPesquisa("MARIA DA SILVA MIRANDA",TipoPesquisa.Nome);
         }
 
         [Then(@"e apresentado a tela de Ficha do Cliente")]

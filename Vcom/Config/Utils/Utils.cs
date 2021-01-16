@@ -18,6 +18,7 @@ namespace Vcom.Utils
                 ToTakeScreenshot(Driver);
             }
         }
+
         private void ToTakeScreenshot(IWebDriver Driver)
         {
             try

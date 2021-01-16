@@ -51,31 +51,31 @@ namespace Vcom.Pages
 
         public void Logar()
         {
-            Thread.Sleep(5000);
+          //Thread.Sleep(5000);
             ToClick(inpLogin);
             ToWrite(inpLogin, "cobsystems");
             WaitElementVisible(inpSenha);
-            Thread.Sleep(3000);
+          //Thread.Sleep(3000);
             ToClick(inpSenha);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToWrite(inpSenha, "cob3vc");
-            Thread.Sleep(3000);
+          //Thread.Sleep(3000);
             ToClick(butEntrar);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             WaitElementVisible(imgLogoZaap);
         }
 
         public void ValidarLogoZaap()
         {
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             WaitElementVisible(imgLogoZaap);
         }
 
         public void SelecionarModoOperador()
         {
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             WaitElementVisible(inpModo);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(inpModo);
         
             WaitElementVisible(inpModoOperador);
@@ -84,309 +84,309 @@ namespace Vcom.Pages
 
         public void SelecionarEquipe()
         {
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             WaitElementVisible(inpEquipe);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(inpEquipe);
         }
 
         public void SelecionarEquipe2()
         {
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             WaitElementVisible(inpEquipe2);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(inpEquipe2);
         }
         public void MenuOperador()
         {
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             WaitElementVisible(menuOperador);
         }
 
         public void PesquisarporNome(string nome)
         {
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             WaitElementVisible(btnPesquisarInicial);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(btnPesquisarInicial);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             WaitElementVisible(inpConteudo);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(inpConteudo);
             ToWrite(inpConteudo, nome);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             WaitElementVisible(btnPesquisar);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(btnPesquisar);
         }
 
         public void ResultadoEsperadoPesquisa(string nome)
         {
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             BarradeRolagem();
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             Assert.AreEqual(nome, GetText(By.XPath("//table[@class='table table-condensed table-hover']/tbody/tr/td[text()='" + nome + "']")));
         }
 
         public void PesquisarporCodigo(string cd)
         {
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             WaitElementVisible(btnPesquisarInicial);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(btnPesquisarInicial);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             WaitElementVisible(btnPesquisarConteudo);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(btnPesquisarConteudo);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             WaitElementVisible(btnPesquisarCodigoIdentificacao);
             ToClick(btnPesquisarCodigoIdentificacao);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(inpConteudo);
             ToWrite(inpConteudo, cd);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             WaitElementVisible(btnPesquisar);
             ToClick(btnPesquisar);
         }
 
         public void PesquisarporCPF(string CPF)
         {
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             WaitElementVisible(btnPesquisarInicial);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(btnPesquisarInicial);
             WaitElementVisible(btnPesquisarConteudo);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(btnPesquisarConteudo);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             WaitElementVisible(btnPesquisarCPF);
             ToClick(btnPesquisarCPF);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(inpConteudo);
             ToWrite(inpConteudo, CPF);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             WaitElementVisible(btnPesquisar);
             ToClick(btnPesquisar);
         }
 
         public void PesquisarporContrato(string Contrato)
         {
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             WaitElementVisible(btnPesquisarInicial);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(btnPesquisarInicial);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             WaitElementVisible(btnPesquisarConteudo);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(btnPesquisarConteudo);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             WaitElementVisible(btnPesquisarContrato);
             ToClick(btnPesquisarContrato);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(inpConteudo);
             ToWrite(inpConteudo, Contrato);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             WaitElementVisible(btnPesquisar);
             ToClick(btnPesquisar);
         }
 
         public void PesquisarporComplementoDoContrato(string ComplementoDoContrato)
         {
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             WaitElementVisible(btnPesquisarInicial);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(btnPesquisarInicial);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             WaitElementVisible(btnPesquisarConteudo);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(btnPesquisarConteudo);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             WaitElementVisible(btnPesquisarComplementoDoContrato);
             ToClick(btnPesquisarComplementoDoContrato);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(inpConteudo);
             ToWrite(inpConteudo, ComplementoDoContrato);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             WaitElementVisible(btnPesquisar);
             ToClick(btnPesquisar);
         }
 
         public void PesquisarporEmail(string PesquisarEmail)
         {
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             WaitElementVisible(btnPesquisarInicial);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(btnPesquisarInicial);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             WaitElementVisible(btnPesquisarConteudo);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(btnPesquisarConteudo);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             WaitElementVisible(btnPesquisarEmail);
             ToClick(btnPesquisarEmail);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(inpConteudo);
             ToWrite(inpConteudo, PesquisarEmail);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             WaitElementVisible(btnPesquisar);
             ToClick(btnPesquisar);
         }
 
         public void PesquisarporTelefone(string PesquisarTelefone)
         {
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             WaitElementVisible(btnPesquisarInicial);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(btnPesquisarInicial);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             WaitElementVisible(btnPesquisarConteudo);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(btnPesquisarConteudo);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             WaitElementVisible(btnPesquisarTelefone);
             ToClick(btnPesquisarTelefone);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(inpConteudo);
             ToWrite(inpConteudo, PesquisarTelefone);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             WaitElementVisible(btnPesquisar);
             ToClick(btnPesquisar);
         }
 
         public void SelecionarCliente()
         {
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             BarradeRolagem();
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             WaitElementVisible(divResultados);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(divResultados);
            
         }
 
         public void InativarEmail()
         {
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             BarradeRolagem();
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             WaitElementVisible(btnResponsavelSim);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(btnResponsavelSim);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(btnEditarEmail);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(ComboStatus);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(ComboStatusInativo);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(btnConfirmStatus);
         }
 
         public void SelecionarResponsavel()
         {
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             BarradeRolagem();
             BarradeRolagem();
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             WaitElementVisible(btnResponsavelSim);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(btnResponsavelSim);
         }
         public void SucessoEmailInativo()
         {
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             WaitElementVisible(flamedisabled);
         }
 
         public void EditarEndereço()
         {
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             WaitElementVisible(btnResponsavelSim);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(btnResponsavelSim);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(btnEditarEndereco);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
         }
 
         public void EditarTelefone()
         {
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             BarradeRolagem();
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             WaitElementVisible(btnResponsavelSim);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(btnResponsavelSim);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(btnEditarTelefone);
         }
 
         public void AlterarTelefone()
         {
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(InpTelefoneNumero);
             ToWrite(InpTelefoneNumero, "33353636");
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(btnConfirmTelefone);
         }
         public void SucessoAlteracaoTelefone()
         {
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             WaitElementVisible(flameAtivo);
         }
 
         public void ConfirmarCadastro()
         {
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             BarradeRolagem();
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             WaitElementVisible(btnConfirmaCadastro);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(btnConfirmaCadastro);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
         }
 
         public void Boletos()
         {
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             WaitElementVisible(btnBoletos);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(btnBoletos);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
         }
 
         public void SelecionarOcorrencia()
         {
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             WaitElementVisible(btnInserirOcorrencia);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(btnInserirOcorrencia);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
         }
 
         public void OcorrenciaNulo()
         {
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             WaitElementVisible(btnOcorrenciaNulo);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             BarradeRolagem();
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(btnOcorrenciaNulo);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             WaitElementVisible(comboMotivo);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(comboMotivo);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(comboMotivo1);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(inpCompleTexto);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToWrite(inpCompleTexto, "Ocorrencia Nulo");
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(inpCompleValor);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToWrite(inpCompleValor, "100");
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToClick(formInsereOcorrencia);
         }
 

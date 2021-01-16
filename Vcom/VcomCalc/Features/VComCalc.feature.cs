@@ -73,7 +73,7 @@ namespace GloboChallenge.VcomCalc.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("01 - Acessar o VcomCalc")]
-        [NUnit.Framework.TestCaseAttribute("\"1.00.201202.01\"", null)]
+        [NUnit.Framework.TestCaseAttribute("\"1.00.201223.01\"", null)]
         public virtual void _01_AcessarOVcomCalc(string versao, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("01 - Acessar o VcomCalc", null, exampleTags);

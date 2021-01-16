@@ -50,51 +50,52 @@ namespace Vcom.Pages
 
         public void ValidarVersao(string Versao)
         {
-            Thread.Sleep(3000);
-            Assert.AreEqual(Versao, GetText(By.XPath("//div/div[@class='col-md-4 col-md-offset-4 text-center']/h5/span[text()='" + Versao + "']")));
+          //Thread.Sleep(3000);
+            var text = GetText(By.XPath("//div/div[@class='col-md-4 col-md-offset-4 text-center']/h5/span[text()='" + Versao + "']"));
+            Assert.AreEqual(Versao, text) ;
         }
 
         public void NegociacaoAVista(string data)
         {
-            Thread.Sleep(3000);
+          //Thread.Sleep(3000);
             BarradeRolagem();
-            Thread.Sleep(5000);
+          //Thread.Sleep(5000);
             WaitElementVisible(inpDataPagamento);
             ToClick(inpDataPagamento);
             ToWrite(inpDataPagamento, data);
-            Thread.Sleep(3000);
+          //Thread.Sleep(3000);
             BarradeRolagem();
             ToClick(btnAtualizar);
-            Thread.Sleep(2000);
+          //Thread.Sleep(2000);
             WaitElementVisible(btnFinalizarNegociacao);
             ToClick(btnFinalizarNegociacao);
         }
 
         public void NegociacaoAParcelado(string data)
         {
-            Thread.Sleep(3000);
+          //Thread.Sleep(3000);
             BarradeRolagem();
-            Thread.Sleep(5000);
+          //Thread.Sleep(5000);
             WaitElementVisible(inpDataPagamento);
             ToClick(inpDataPagamento);
             ToWrite(inpDataPagamento, data);
-            Thread.Sleep(3000);
+          //Thread.Sleep(3000);
             BarradeRolagem();
             ToClick(btnAtualizar);
-            Thread.Sleep(2000);
+          //Thread.Sleep(2000);
             WaitElementVisible(btnFinalizarNegociacao);
             ToClick(btnFinalizarNegociacao);
         }
 
         public void VisualizarBoleto()
         {
-            Thread.Sleep(5000);
+          //Thread.Sleep(5000);
             ToClick(btnVisualizarBoleto);
-            Thread.Sleep(5000);
+          //Thread.Sleep(5000);
         }
         public void VisualizarEmail()
         {
-            Thread.Sleep(5000);
+          //Thread.Sleep(5000);
             WaitElementVisible(btnBoletoEmail);
             ToClick(btnBoletoEmail);
             WaitElementVisible(selectEmail);
@@ -103,13 +104,13 @@ namespace Vcom.Pages
             ToClick(opcaoEmail);
             WaitElementVisible(opcaoEmail);
             ToClick(btnEnviarEmail);
-            Thread.Sleep(5000);
+          //Thread.Sleep(5000);
             Assert.AreEqual("O boleto foi enviado com sucesso para: ", GetText(By.XPath("//*[@id='div - envio - resultado']/div/h3[text()='O boleto foi enviado com sucesso para: ']")));
         }
 
         public void EnviarPorSms()
         {
-            Thread.Sleep(5000);
+          //Thread.Sleep(5000);
             WaitElementVisible(btnEnviarSMS);
             ToClick(btnEnviarSMS);
             BarradeRolagem();
@@ -127,124 +128,124 @@ namespace Vcom.Pages
             ToClick(selectOpcaoSMS);
             WaitElementVisible(btnEnviarSMSAgora);
             ToClick(btnEnviarSMSAgora);
-            Thread.Sleep(5000);
+          //Thread.Sleep(5000);
         }
 
         public void UltimasAtualizações()
         {
             BarradeRolagem();
             BarradeRolagem();
-            Thread.Sleep(3000);
+          //Thread.Sleep(3000);
             WaitElementVisible(btnNegociacoes);
             ToClick(btnNegociacoes);
         }
 
         public void VisualizarUltimasAtualizações()
         {
-            Thread.Sleep(3000);
+          //Thread.Sleep(3000);
             BarradeRolagem();
-            Thread.Sleep(3000);
+          //Thread.Sleep(3000);
             Assert.AreEqual("Últimas negociações", GetText(By.XPath("//*[@id='div-ultimas-negociacoes']/div/span[text()='Últimas negociações']")));
         }
 
         public void SelecionarReimpressao()
         {
-            Thread.Sleep(3000);
+          //Thread.Sleep(3000);
             WaitElementVisible(btnMostrarOpcoes);
             ToClick(btnMostrarOpcoes);
             WaitElementVisible(btnOpcoes);
             ToClick(btnOpcoes);
-            Thread.Sleep(3000);
+          //Thread.Sleep(3000);
             WaitElementVisible(btnReimprimir);
             ToClick(btnReimprimir);
         }
 
         public void VisualizarReimpressao()
         {
-            Thread.Sleep(5000);
+          //Thread.Sleep(5000);
         }
 
         public void CancelarBoleto()
         {
-            Thread.Sleep(3000);
+          //Thread.Sleep(3000);
             WaitElementVisible(btnMostrarOpcoes);
             ToClick(btnMostrarOpcoes);
             WaitElementVisible(btnOpcoes);
             ToClick(btnOpcoes);
-            Thread.Sleep(3000);
+          //Thread.Sleep(3000);
             WaitElementVisible(btnCancelar);
             ToClick(btnCancelar);
         }
 
         public void SalvarNegociacao()
         {
-            Thread.Sleep(3000);
+          //Thread.Sleep(3000);
             BarradeRolagem();
-            Thread.Sleep(5000);
+          //Thread.Sleep(5000);
             WaitElementVisible(inpDataPagamento);
             ToClick(inpDataPagamento);
             ToWrite(inpDataPagamento, "07/12/2020");
-            Thread.Sleep(3000);
+          //Thread.Sleep(3000);
             BarradeRolagem();
             WaitElementVisible(btnComandos);
             ToClick(btnComandos);
-            Thread.Sleep(3000);
+          //Thread.Sleep(3000);
             WaitElementVisible(btnGravarSimulacao);
             ToClick(btnGravarSimulacao);
         }
 
         public void EmitirBoleto()
         {
-            Thread.Sleep(3000);
+          //Thread.Sleep(3000);
             WaitElementVisible(abrirOpcoes);
             ToClick(abrirOpcoes);
             WaitElementVisible(btnOpcoesGravados);
             ToClick(btnOpcoesGravados);
-            Thread.Sleep(3000);
+          //Thread.Sleep(3000);
             WaitElementVisible(btnEmitirBoleto);
             ToClick(btnCancelar);
         }
 
         public void Abrir()
         {
-            Thread.Sleep(3000);
+          //Thread.Sleep(3000);
             WaitElementVisible(abrirOpcoes);
             ToClick(abrirOpcoes);
             WaitElementVisible(btnOpcoesGravados);
             ToClick(btnOpcoesGravados);
-            Thread.Sleep(3000);
+          //Thread.Sleep(3000);
             WaitElementVisible(btnAbrir);
             ToClick(btnAbrir);
         }
 
         public void Cancelar()
         {
-            Thread.Sleep(3000);
+          //Thread.Sleep(3000);
             WaitElementVisible(abrirOpcoes);
             ToClick(abrirOpcoes);
             WaitElementVisible(btnOpcoesGravados);
             ToClick(btnOpcoesGravados);
-            Thread.Sleep(3000);
+          //Thread.Sleep(3000);
             WaitElementVisible(btnCancelarNegociacao);
             ToClick(btnCancelarNegociacao);
         }
 
         public void RecebimentoNegociacao()
         {
-            Thread.Sleep(3000);
+          //Thread.Sleep(3000);
             BarradeRolagem();
-            Thread.Sleep(5000);
+          //Thread.Sleep(5000);
             WaitElementVisible(inpDataPagamento);
             ToClick(inpDataPagamento);
             ToWrite(inpDataPagamento, "07/12/2020");
-            Thread.Sleep(3000);
+          //Thread.Sleep(3000);
             BarradeRolagem();
             WaitElementVisible(btnComandos);
             ToClick(btnComandos);
-            Thread.Sleep(2000);
+          //Thread.Sleep(2000);
             WaitElementVisible(btnGravarPagamento);
             ToClick(btnGravarPagamento);
-            Thread.Sleep(5000);
+          //Thread.Sleep(5000);
             WaitElementVisible(btnConfirmarPagamento);
         }
     }

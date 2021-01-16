@@ -88,11 +88,12 @@
   <ItemGroup>
     <Compile Include="CobWeb\Page\CobWebPage.cs" />
     <Compile Include="CobWeb\Steps\CobWebSteps.cs" />
+    <Compile Include="Config\Utils\Helpers.cs" />
     <Compile Include="VcomCalc\Page\VcomCalcPage.cs" />
     <Compile Include="VcomCalc\Steps\VcomCalcSteps.cs" />
     <Compile Include="VcomCob\Page\VcomCobPage.cs" />
     <Compile Include="VcomCob\Steps\VcomCobSteps.cs" />
-    <Compile Include="Config\Browsers\Browsers.cs" />
+    <Compile Include="Config\Hooks\Browsers.cs" />
     <Compile Include="Zaap\Features\Zaap.feature.cs" />
     <Compile Include="Zaap\Steps\RegisterSteps.cs" />
     <Compile Include="Config\Hooks\Hooks.cs" />
@@ -115,7 +116,9 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Config\Browsers\" />
+  </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

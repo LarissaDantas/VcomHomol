@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
+using System.Threading;
 using TechTalk.SpecFlow;
 
 namespace Vcom.Pages
@@ -10,11 +11,14 @@ namespace Vcom.Pages
         private static readonly int WAIT_ELEMENT_SECONDS = 80;
         private readonly IWebDriver driver;
 
-        
+        private  WebDriverWait Wait;
 
         public BasePage()
         {
             driver = (IWebDriver)ScenarioContext.Current["driver"];
+            Wait = new WebDriverWait(driver, TimeSpan.FromSeconds(WAIT_ELEMENT_SECONDS));
+
+
         }
 
         public void JavaScript(string script)
@@ -34,26 +38,36 @@ namespace Vcom.Pages
             js.ExecuteScript("scroll(250, 0);");
         }
 
-        public void WaitElement(By path)
-        {
-            var Wait = new WebDriverWait(driver, TimeSpan.FromSeconds(WAIT_ELEMENT_SECONDS));
-            var element = Wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.PresenceOfAllElementsLocatedBy(path));
-        }
 
+        public IWebElement WaitElement(By path)
+        {
+            //WaitForAjax();
+            Thread.Sleep(1000);
+            return  Wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(path));
+            
+        }
+        //public void WaitForAjax()
+        //{
+        //    while (true) // Handle timeout somewhere
+        //    {
+        //        var ajaxIsComplete = (bool)(driver as IJavaScriptExecutor).ExecuteScript("return jQuery.active == 0 && document.readyState =='complete'");
+        //        if (ajaxIsComplete)
+        //            break;
+        //        Thread.Sleep(100);
+        //    }
+        //}
         public bool WaitElementVisible(By path)
         {
-            var Wait = new WebDriverWait(driver, TimeSpan.FromSeconds(WAIT_ELEMENT_SECONDS));
-            var element = Wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(path));
-
-            return ToLocate(path).Displayed;
+            
+            var element = WaitElement(path);
+            Console.WriteLine(element.Displayed);
+            return element.Displayed;
         }
 
         public bool WaitElementIsClickabe(By path)
         {
-            var Wait = new WebDriverWait(driver, TimeSpan.FromSeconds(WAIT_ELEMENT_SECONDS));
-            var element = Wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(path));
-
-            return ToLocate(path).Displayed && ToLocate(path).Enabled;
+            var element = WaitElement(path);
+            return element.Displayed && element.Enabled;
         }
 
         public IWebElement ToLocate(By path)
@@ -63,7 +77,7 @@ namespace Vcom.Pages
 
         public void ToClick(By path)
         {
-            WaitElementVisible(path);
+            //WaitElementVisible(path);
             WaitElementIsClickabe(path);
             ToLocate(path).Click();
         }

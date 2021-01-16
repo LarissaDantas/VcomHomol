@@ -23,6 +23,8 @@ namespace Vcom.Pages
                     var options = new ChromeOptions();
                     options.AddUserProfilePreference("credentials_enable_service", false);
                     options.AddUserProfilePreference("password_manager_enabled", false);
+                    //options.AddArguments("headless");
+                    options.PageLoadStrategy = PageLoadStrategy.Normal;
                     Driver = new ChromeDriver(options);
                     ConfigBrowser();
                     ScenarioContext.Current["driver"] = Driver;
@@ -43,8 +45,10 @@ namespace Vcom.Pages
         private void ConfigBrowser()
         {
             Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
-            Driver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromMilliseconds(10);
+            Driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(60);
+            Driver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromMilliseconds(20);
             Driver.Manage().Window.Maximize();
+            
         }
 
         public void ToFinishBrowser()

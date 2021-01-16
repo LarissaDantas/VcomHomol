@@ -31,13 +31,8 @@ namespace Vcom.Hooks
             [AfterScenario]
             public void AfterScenario()
             {
-
-            
              var screen = new ScreenShot();
              screen.ToTakeScreenShot();
-            
-
-
             var end = new Browser();
                 end.ToFinishBrowser();
             }

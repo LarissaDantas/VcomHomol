@@ -21,23 +21,23 @@ namespace Vcom.Pages
 
         public void Logar()
         {
-            Thread.Sleep(5000);
+          //Thread.Sleep(5000);
             ToClick(inpLogin);
             ToWrite(inpLogin, "cobsystems");
             WaitElementVisible(inpSenha);
-            Thread.Sleep(3000);
+          //Thread.Sleep(3000);
             ToClick(inpSenha);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToWrite(inpSenha, "cob3vc");
-            Thread.Sleep(3000);
+          //Thread.Sleep(3000);
             ToClick(inpEntrar);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             WaitElementVisible(impMenu);
         }
 
         public void Usuario()
         {
-            Thread.Sleep(5000);
+          //Thread.Sleep(5000);
             ToClick(inpLogin);
             ToWrite(inpLogin, "cobsystems");
         }
@@ -45,22 +45,22 @@ namespace Vcom.Pages
         public void Senha()
         {
             WaitElementVisible(inpSenha);
-            Thread.Sleep(3000);
+          //Thread.Sleep(3000);
             ToClick(inpSenha);
-            Thread.Sleep(1000);
+          //Thread.Sleep(1000);
             ToWrite(inpSenha, "cob3vc");
         }
 
         public void PaginaInicial()
         {
-            Thread.Sleep(3000);
+          //Thread.Sleep(3000);
             ToClick(inpEntrar);
-            Thread.Sleep(2000);
+          //Thread.Sleep(2000);
         }
 
         public void Telecobrança()
         {
-            Thread.Sleep(3000);
+          //Thread.Sleep(3000);
             JavaScript("document.querySelector('#M3001').click();");
         }
     }

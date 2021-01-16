@@ -10,7 +10,7 @@ Esquema do Cenario: 01 - Acessar o VcomCalc
 
 	Exemplos: 
 	  | Versao           |
-	  | "1.00.201202.01" |
+	  | "1.00.201223.01" |
 
 Esquema do Cenario: 02 - Emissão de boleto à vista (com impressão)
 	Dado que eu acesso o VcomCalc com cliente negociavel
