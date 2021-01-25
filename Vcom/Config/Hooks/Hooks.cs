@@ -31,7 +31,7 @@ namespace Vcom.Hooks
         public void AfterScenario()
         {
             var screen = new ScreenShot();
-            screen.ToTakeScreenshot((IWebDriver)ScenarioContext.Current["driver"]);
+            screen.ToTakeScreenshot((IWebDriver)ScenarioContext.Current["driver"],"finish");
             browser.ToFinishBrowser();
         }
     }

@@ -15,19 +15,20 @@ namespace Vcom.Utils
             if (ScenarioContext.Current.TestError != null)
             {
                 Driver = (IWebDriver)ScenarioContext.Current["driver"];
-                ToTakeScreenshot(Driver);
+                ToTakeScreenshot(Driver,"error");
             }
         }
 
-        public void ToTakeScreenshot(IWebDriver Driver)
+        public void ToTakeScreenshot(IWebDriver Driver,string state="sucess")
         {
             try
             {
-                string fileNameBase = string.Format("error-{0}_{1}",
+                string fileNameBase = string.Format("{2}-{0}_{1}",
                 //FeatureContext.Current.FeatureInfo.Title.ToIdentifier(),
                 DateTime.Now.ToString("dd.MM.yyyy"),
-                ScenarioContext.Current.ScenarioInfo.Title.ToIdentifier());
-                var artifactDirectory = Path.Combine(Directory.GetCurrentDirectory(), "imagens_error");
+                ScenarioContext.Current.ScenarioInfo.Title.ToIdentifier(),state);
+                //var x = Directory.GetDirectories("C:");
+                var artifactDirectory = Path.Combine("C:/Evidency", "imagens_"+state);
                 if (!Directory.Exists(artifactDirectory))
                     Directory.CreateDirectory(artifactDirectory);
                 string pageSource = Driver.PageSource;
